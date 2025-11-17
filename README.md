@@ -94,14 +94,12 @@ The application consists of **three interactive tabs**, each representing a step
 - Shows the cleaned modeling dataset  
 - Provides transparency into preprocessing  
 
----
 
 ### **2. Variable Importance**
 - Displays the top predictors of energy usage level  
 - Uses `vip` + `ggplot2`  
 - Helps interpret the Random Forest model  
 
----
 
 ### **3. Predictions & Model Performance**
 This tab includes:

@@ -62,7 +62,7 @@ The final modeling dataset contains **100,000 sampled observations**.
 
 ## **Modeling Pipeline**
 
-### ✔ Data Preprocessing
+### Data Preprocessing
 - Combined low/medium/high datasets  
 - Removed constant and near-zero variance variables  
 - Converted categorical variables to factors  
@@ -70,7 +70,7 @@ The final modeling dataset contains **100,000 sampled observations**.
 - Extracted date & time from timestamp  
 - Removed irrelevant identifiers (`bldg_id`)  
 
-### ✔ Modeling
+### Modeling
 A **Random Forest** classifier (`ranger`) was trained on an 80/20 split.
 
 Saved model outputs include:

@@ -9,7 +9,7 @@
 
 ## **Overview**
 
-This interactive Shiny application explores residential household energy usage and predicts whether a home belongs to a **Low**, **Medium**, or **High** energy usage category. The app uses a Random Forest model trained on a dataset containing **200+ building, weather, demographic, and energy consumption variables**, providing users with tools to:
+This interactive Shiny application explores residential household energy usage and predicts whether a home belongs to a **Low**, **Medium**, or **High** energy usage category. The app uses a Random Forest model trained on a dataset containing 200+ building, weather, demographic, and energy consumption variables, providing users with tools to:
 
 - Preview the cleaned dataset  
 - View variable importance scores  
@@ -56,7 +56,7 @@ The dataset includes:
 - **Medium**
 - **High**
 
-The final modeling dataset contains **100,000 sampled observations**.
+The final modeling dataset contains 100,000 sampled observations.
 
 ---
 
@@ -68,10 +68,10 @@ The final modeling dataset contains **100,000 sampled observations**.
 - Converted categorical variables to factors  
 - Cleaned occupant values  
 - Extracted date & time from timestamp  
-- Removed irrelevant identifiers (`bldg_id`)  
+- Removed irrelevant identifiers  
 
 ### Modeling
-A **Random Forest** classifier (`ranger`) was trained on an 80/20 split.
+A **Random Forest** classifier was trained on an 80/20 split.
 
 Saved model outputs include:
 - `rf_model.rds`  
@@ -86,7 +86,7 @@ These files load automatically inside the Shiny app.
 
 ## **Shiny App Structure**
 
-The application consists of **three main tabs**, each showing different parts of the analysis pipeline.
+The application consists of three main tabs, each showing different parts of the analysis pipeline.
 
 ---
 
@@ -100,11 +100,11 @@ Provides transparency into preprocessing steps and the final features used for m
 ---
 
 ### ### **2. Variable Importance**
-Displays the **top variables** contributing to the Random Forest model.
+Displays the top variables contributing to the Random Forest model.
 
-- Renders a **bar chart** of variable importances  
+- Renders a bar chart of variable importances  
 - Uses `vip` and `ggplot2`  
-- Highlights the **most influential predictors** of energy usage level  
+- Highlights the most influential predictors of energy usage level  
 
 This helps users understand the model’s behavior and interpretability.
 

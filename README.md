@@ -24,14 +24,14 @@ This project demonstrates the full data science lifecycle: cleaning, sampling, f
 
 The dataset includes:
 
-### **Energy Output Variables**
+## **Energy Output Variables**
 - Electricity (cooling, heating, appliances, lighting, pumps, fans)
 - Natural gas, propane, and fuel oil usage  
 - PV energy  
 - Pool/spa heating  
 - Plug loads  
 
-### **Building Characteristics**
+## **Building Characteristics**
 - Floor area and geometry  
 - HVAC type & efficiency  
 - Insulation (ceiling, wall, floor, foundation)  
@@ -39,18 +39,18 @@ The dataset includes:
 - Occupants, number of bedrooms  
 - Structural characteristics  
 
-### **Weather Variables**
+## **Weather Variables**
 - Dry bulb temperature  
 - Relative humidity  
 - Wind speed & direction  
 - Solar radiation levels  
 
-### **Demographics**
+## **Demographics**
 - Household income  
 - Census region & climate zone  
 - Tenure (rent/own)  
 
-### **Target Variable**
+## **Target Variable**
 `in.usage_level` with values:
 - **Low**
 - **Medium**
@@ -62,7 +62,7 @@ The final modeling dataset contains 100,000 sampled observations.
 
 ## **Modeling Pipeline**
 
-### Data Preprocessing
+## Data Preprocessing
 - Combined low/medium/high datasets  
 - Removed constant and near-zero variance variables  
 - Converted categorical variables to factors  
@@ -70,7 +70,7 @@ The final modeling dataset contains 100,000 sampled observations.
 - Extracted date & time from timestamp  
 - Removed irrelevant identifiers  
 
-### Modeling
+## Modeling
 A **Random Forest** classifier was trained on an 80/20 split.
 
 Saved model outputs include:
@@ -90,7 +90,7 @@ The application consists of three main tabs, each showing different parts of the
 
 ---
 
-### ### **1. Dataset Preview**
+## **1. Dataset Preview**
 Allows users to:
 - Specify the number of rows to display  
 - View the cleaned modeling dataset using a dynamic data table  
@@ -99,7 +99,7 @@ Provides transparency into preprocessing steps and the final features used for m
 
 ---
 
-### ### **2. Variable Importance**
+## **2. Variable Importance**
 Displays the top variables contributing to the Random Forest model.
 
 - Renders a bar chart of variable importances  
@@ -110,22 +110,22 @@ This helps users understand the model’s behavior and interpretability.
 
 ---
 
-### ### **3. Predictions & Model Performance**
+## **3. Predictions & Model Performance**
 This tab includes:
 
-#### **Prediction Results**
+### **Prediction Results**
 A table of all predictions from `rf_predictions.csv`.
 
-#### **Confusion Matrix**
+### **Confusion Matrix**
 A precomputed confusion matrix summarizing:
 - Correct classifications  
 - Misclassified homes  
 - Distribution of errors  
 
-#### **Model Accuracy**
+### **Model Accuracy**
 Displayed as a single numeric metric from `rf_accuracy.rds`.
 
-#### **Confusion Matrix Explanation**
+### **Confusion Matrix Explanation**
 A plain-language interpretation of:
 - True positives  
 - False positives  

@@ -56,7 +56,7 @@ The dataset includes:
 - **Medium**
 - **High**
 
-The final modeling dataset contains **100,000 sampled observations**.
+The final modeling dataset contains 100,000 sampled observations.
 
 ---
 
@@ -74,13 +74,12 @@ The final modeling dataset contains **100,000 sampled observations**.
 A **Random Forest** classifier was trained on an 80/20 split.
 
 Saved model outputs include:
-- `rf_model.rds`  
 - `rf_predictions.csv`  
 - `rf_conf_matrix.RData`  
 - `rf_accuracy.rds`  
 - `data_sample_filtered.csv`  
 
-These files load automatically inside the Shiny app.
+*Note: The trained Random Forest model (`rf_model.rds`) is not included due to GitHub’s file-size limit.
 
 ---
 
@@ -144,4 +143,3 @@ A plain-language interpretation of:
 - `models/rf_accuracy.rds` – Model accuracy metric  
 
 ---
-

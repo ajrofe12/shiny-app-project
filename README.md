@@ -113,19 +113,19 @@ This helps users understand the model’s behavior and interpretability.
 ## **3. Predictions & Model Performance**
 This tab includes:
 
-### **Prediction Results**
+#### **Prediction Results**
 A table of all predictions from `rf_predictions.csv`.
 
-### **Confusion Matrix**
+#### **Confusion Matrix**
 A precomputed confusion matrix summarizing:
 - Correct classifications  
 - Misclassified homes  
 - Distribution of errors  
 
-### **Model Accuracy**
+#### **Model Accuracy**
 Displayed as a single numeric metric from `rf_accuracy.rds`.
 
-### **Confusion Matrix Explanation**
+#### **Confusion Matrix Explanation**
 A plain-language interpretation of:
 - True positives  
 - False positives  

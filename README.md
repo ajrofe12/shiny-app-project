@@ -135,12 +135,13 @@ A plain-language interpretation of:
 ---
 
 ## **Files Included**
-- `app.R`  
-- `data_sample_filtered.csv`  
-- `rf_model.rds`  
-- `rf_predictions.csv`  
-- `rf_conf_matrix.RData`  
-- `rf_accuracy.rds`  
+
+- `app.R` – Full Shiny application  
+- `scripts/data_sample_code.R` – Data sampling and preprocessing pipeline  
+- `data/data_sample_filtered.csv` – Cleaned dataset used by the app  
+- `models/rf_predictions.csv` – Model predictions  
+- `models/rf_conf_matrix.RData` – Confusion matrix results  
+- `models/rf_accuracy.rds` – Model accuracy metric  
 
 ---
 

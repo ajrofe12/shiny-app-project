@@ -9,14 +9,15 @@
 
 ## **Overview**
 
-This interactive Shiny application explores residential household energy usage and predicts whether a home belongs to a **Low**, **Medium**, or **High** energy usage category. The app uses a Random Forest model trained on a dataset containing 200+ building, weather, demographic, and energy consumption variables, providing users with tools to:
+This interactive Shiny application explores residential household energy usage and predicts whether a home belongs to a **Low**, **Medium**, or **High** usage category.  
+The app uses a Random Forest model trained on a dataset containing **200+ building, weather, demographic, and energy consumption variables**, providing users with tools to:
 
 - Preview the cleaned dataset  
 - View variable importance scores  
 - Explore model predictions  
-- Examine accuracy and the confusion matrix  
+- Examine model accuracy and confusion matrices  
 
-This project demonstrates the full data science lifecycle: cleaning, sampling, feature engineering, modeling, evaluation, and visualization.
+This project demonstrates the complete data science lifecycle: data cleaning, sampling, feature engineering, modeling, evaluation, and visualization.
 
 ---
 
@@ -37,13 +38,13 @@ The dataset includes:
 - Insulation (ceiling, wall, floor, foundation)  
 - Ventilation / infiltration  
 - Occupants, number of bedrooms  
-- Structural characteristics  
+- Structural attributes  
 
 ### **Weather Variables**
 - Dry bulb temperature  
 - Relative humidity  
 - Wind speed & direction  
-- Solar radiation levels  
+- Solar radiation  
 
 ### **Demographics**
 - Household income  
@@ -51,12 +52,12 @@ The dataset includes:
 - Tenure (rent/own)  
 
 ### **Target Variable**
-`in.usage_level` with values:
+`in.usage_level` with three classes:
 - **Low**
 - **Medium**
 - **High**
 
-The final modeling dataset contains 100,000 sampled observations.
+The final modeling dataset contains **100,000 sampled observations**.
 
 ---
 
@@ -66,46 +67,39 @@ The final modeling dataset contains 100,000 sampled observations.
 - Combined low/medium/high datasets  
 - Removed constant and near-zero variance variables  
 - Converted categorical variables to factors  
-- Cleaned occupant values  
-- Extracted date & time from timestamp  
+- Cleaned invalid occupant values  
+- Extracted date and time from timestamp  
 - Removed irrelevant identifiers  
+- Applied correlation filtering  
 
 ### **Modeling**
-A **Random Forest** classifier was trained on an 80/20 split.
+A **Random Forest** classifier was trained using an 80/20 split.
 
-Saved model outputs include:
+Saved model outputs used by the app:
 - `rf_predictions.csv`  
 - `rf_conf_matrix.RData`  
 - `rf_accuracy.rds`  
 - `data_sample_filtered.csv`  
 
-*Note: The trained Random Forest model (`rf_model.rds`) is not included due to GitHub’s file-size limit.
-
 ---
 
 ## **Shiny App Structure**
 
-The application consists of **three main tabs**, each showing different parts of the analysis pipeline.
+The application consists of **three interactive tabs**, each representing a step in the analysis process.
 
 ---
 
 ### **1. Dataset Preview**
-Allows users to:
-- Specify the number of rows to display  
-- View the cleaned modeling dataset using a dynamic data table  
-
-Provides transparency into preprocessing steps and the final features used for modeling.
+- User chooses number of rows to display  
+- Shows the cleaned modeling dataset  
+- Provides transparency into preprocessing  
 
 ---
 
 ### **2. Variable Importance**
-Displays the top variables contributing to the Random Forest model.
-
-- Renders a bar chart of variable importances  
-- Uses `vip` and `ggplot2`  
-- Highlights the most influential predictors of energy usage level  
-
-This helps users understand the model’s behavior and interpretability.
+- Displays the top predictors of energy usage level  
+- Uses `vip` + `ggplot2`  
+- Helps interpret the Random Forest model  
 
 ---
 
@@ -113,19 +107,19 @@ This helps users understand the model’s behavior and interpretability.
 This tab includes:
 
 #### **Prediction Results**
-A table of all predictions from `rf_predictions.csv`.
+Table of predictions from `rf_predictions.csv`.
 
 #### **Confusion Matrix**
-A precomputed confusion matrix summarizing:
-- Correct classifications  
-- Misclassified homes  
-- Distribution of errors  
+Shows:
+- Correct predictions  
+- Misclassifications  
+- Class distribution  
 
-#### **Model Accuracy**
-Displayed as a single numeric metric from `rf_accuracy.rds`.
+#### **Accuracy Metric**
+Loaded from `rf_accuracy.rds`.
 
 #### **Confusion Matrix Explanation**
-A plain-language interpretation of:
+Plain-language explanation of:
 - True positives  
 - False positives  
 - Misclassification meaning  
@@ -133,9 +127,25 @@ A plain-language interpretation of:
 
 ---
 
+## **Project Write-Up**
+
+A complete write-up of the project’s methodology is included:
+
+- [Energy Usage Project Writeup](energy_usage_writeup.pdf)
+
+The document covers:
+- Data cleaning, sampling strategy, and variance filtering  
+- Justification for removing energy output variables  
+- Comparison of Ordered Logit, Ordered Probit, and Random Forest models  
+- Model accuracies and performance discussion  
+- Interpretation of variable importance  
+- Recommendations for energy efficiency  
+
+
 ## **Files Included**
 
-- `app.R` – Full Shiny application  
+- `app.R` – Full Shiny application
+- `energy_usage_writeup.pdf` - Full project write-up and methodology
 - `scripts/data_sample_code.R` – Data sampling and preprocessing pipeline  
 - `data/data_sample_filtered.csv` – Cleaned dataset used by the app  
 - `models/rf_predictions.csv` – Model predictions  

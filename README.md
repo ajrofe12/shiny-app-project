@@ -1,7 +1,6 @@
 # **Residential Energy Usage Shiny App**  
-**Course:** IST 687 – Introduction to Data Science  
-**Semester:** Fall 2024  
-**Tools:** R, Shiny, tidyverse, ranger, caret, vip, ggplot2  
+**Project Type:** Machine Learning / Interactive Dashboard  
+**Tools:** R, Shiny, tidyverse, ranger, caret, vip, ggplot2
 
 **Live App:** https://ajrofe.shinyapps.io/shiny_app/
 
@@ -142,12 +141,10 @@ The document covers:
 
 ## **Files Included**
 
-- `app.R` – Full Shiny application
-- `energy_usage_writeup.pdf` - Full project write-up and methodology
-- `scripts/data_sample_code.R` – Data sampling and preprocessing pipeline  
-- `data/data_sample_filtered.csv` – Cleaned dataset used by the app  
-- `models/rf_predictions.csv` – Model predictions  
-- `models/rf_conf_matrix.RData` – Confusion matrix results  
-- `models/rf_accuracy.rds` – Model accuracy metric  
+- [`app.R`](app.R) – Full Shiny application
+- [`energy_usage_writeup.pdf`](energy_usage_writeup.pdf) – Full project write-up and methodology
+- [`scripts/`](scripts/) – Data sampling and preprocessing pipeline
+- [`data/`](data/) – Cleaned dataset used by the app
+- [`models/`](models/) – Model predictions, confusion matrix, and accuracy metric
 
 ---
